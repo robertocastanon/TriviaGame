@@ -1,5 +1,5 @@
 //Onclick that when pressed displays the first question page
-document.getElementById("startGame").onclick = function() {page1Start(), hideButton()}
+document.getElementById("startGame").onclick = function() {page1Start(), hideButton(), hideResults()}
 document.getElementById("startGame").innerHTML = "START GAME!";
 
 //after the start game button has been pressed hide it so its out of the way
@@ -26,6 +26,16 @@ function showDisplay() {
     divDisplay.style.display = '';
 }
 
+function hideResults() {
+    var divResults = document.getElementById("userResults");
+    divResults.style.display = 'none';
+}
+
+function showResults() {
+    var divResults = document.getElementById("userResults");
+    divResults.style.display = '';
+}
+
 var scoreCorrect = 0;
 
 var scoreWrong = 0;
@@ -38,12 +48,18 @@ var count = 10;
 
 var rcount = 3;
 
-
+function resetResults(){
+    scoreCorrect = 0;
+    scoreWrong = 0;
+    noAnswer = 0;
+}
 
 //function that starts the first page of questions on the trvia page
 function page1Start() {
 
+showDisplay();
 
+resetResults();
 
 //timer that when reaches 0 will end will result in a "time out screen" also displaying the correct answer
 var counter=setInterval(timer, 1000) //100 will run it every second
@@ -380,11 +396,13 @@ document.getElementById("a3").onclick = function() {oneFuncCorrect(), hideDispla
 };
 
 function page3Start () {
+    showResults();
     document.getElementById("ca").innerHTML = "Correct Answer: " + scoreCorrect;
     document.getElementById("ia").innerHTML = "Incorrect Answer: " + scoreWrong;
     document.getElementById("ua").innerHTML = "Unanswered: " + noAnswer;
 
     showButton();
+    // document.getElementById("startGame").onclick = function() {page1Start(), hideButton()}
     document.getElementById("startGame").innerHTML = "PLAY AGAIN?";
 }
 
