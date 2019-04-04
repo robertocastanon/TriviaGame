@@ -29,9 +29,9 @@ function showDisplay() {
 
 var response = ["OUT OF TIME!", "CORRECT!!", "WRONG.."];
 
-var count = 20;
+var count = 10;
 
-var rcount = 5;
+var rcount = 3;
 
 
 
@@ -51,6 +51,25 @@ function timer() {
      console.log("out of time!");
      hideDisplay();
      document.getElementById("result").innerHTML = response[0];
+
+     var rcounter=setInterval(rtimer, 1000) //100 will run it every second
+
+     function rtimer() {
+         rcount=rcount-1;
+         if (rcount <= 0) {
+            clearInterval(rcounter);
+            //when timer reaches 0 the display id will hide and a 'time out' result will show
+            console.log("next page");
+            document.getElementById("result").innerHTML = "";
+            document.getElementById("correctA").innerHTML = "";
+            page2Start();
+             return;
+         }
+     }
+
+     
+
+
       return;
   }
 
@@ -75,7 +94,7 @@ document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay(
         document.getElementById("result").innerHTML = response[2];
         document.getElementById("correctA").innerHTML ="Correct Answer was " + page1[3];
 
-        timer();
+        clearInterval(counter);
 
         var rcounter=setInterval(rtimer, 1000) //100 will run it every second
 
@@ -87,7 +106,6 @@ document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay(
                console.log("next page");
                document.getElementById("result").innerHTML = "";
                document.getElementById("correctA").innerHTML = "";
-               count = 0;
                page2Start();
                 return;
             }
@@ -102,7 +120,7 @@ document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay(
         document.getElementById("result").innerHTML = response[2];
         document.getElementById("correctA").innerHTML ="Correct Answer was " + page1[3];
 
-        timer();
+        clearInterval(counter);
 
         var rcounter=setInterval(rtimer, 1000) //100 will run it every second
 
@@ -114,7 +132,6 @@ document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay(
                console.log("next page");
                document.getElementById("result").innerHTML = "";
                document.getElementById("correctA").innerHTML = "";
-               count = 0;
                page2Start();
                 return;
             }
@@ -127,7 +144,7 @@ document.getElementById("a3").onclick = function() {oneFuncCorrect(), hideDispla
         console.log("correct");
         document.getElementById("result").innerHTML = response[1];
 
-        timer();
+        clearInterval(counter);
 
         var rcounter=setInterval(rtimer, 1000) //100 will run it every second
 
@@ -139,7 +156,6 @@ document.getElementById("a3").onclick = function() {oneFuncCorrect(), hideDispla
                console.log("next page");
                document.getElementById("result").innerHTML = "";
                document.getElementById("correctA").innerHTML = "";
-               count = 0;
                page2Start();
                 return;
             }
@@ -153,7 +169,7 @@ document.getElementById("a3").onclick = function() {oneFuncCorrect(), hideDispla
         document.getElementById("result").innerHTML = response[2];
         document.getElementById("correctA").innerHTML ="Correct Answer was " + page1[3];
 
-        timer();
+        clearInterval(counter);
 
         var rcounter=setInterval(rtimer, 1000) //100 will run it every second
 
@@ -165,7 +181,6 @@ document.getElementById("a3").onclick = function() {oneFuncCorrect(), hideDispla
                console.log("next page");
                document.getElementById("result").innerHTML = "";
                document.getElementById("correctA").innerHTML = "";
-               count = 0;
                page2Start();
                 return;
             }
@@ -183,7 +198,9 @@ document.getElementById("a3").onclick = function() {oneFuncCorrect(), hideDispla
 
 
 function page2Start () {
+//Will bring back the html starting display at the start of the next question
 showDisplay();
+//rest both the counts
 count = 20;
 rcount = 5;
 
@@ -203,6 +220,9 @@ function timer() {
 //display timer on html
  document.getElementById("timer").innerHTML="Time Remaining: " + count + " Seconds";
 }
+
+
+
 };
 
 
