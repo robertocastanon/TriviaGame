@@ -37,17 +37,26 @@ function showResults() {
 }
 
 
+function wPicShow() {
+    document.getElementById('wrongPic').style.visibility='visible';
+    console.log("show pic");
+}
+function wPicHide() {
+    document.getElementById('wrongPic').style.visibility='hidden';
+    console.log("hide pic");
+}
 
 var scoreCorrect = 0;
 
 var scoreWrong = 0;
 
 var noAnswer = 0;
-
+//var which is called with a specific length after answering each question or running out of time
 var response = ["OUT OF TIME!", "CORRECT!!", "WRONG.."];
 
+//the initial countdown for the first page of questions
 var count = 10;
-
+//the initial countdown for when you get the result after choosing an answer or running out of time
 var rcount = 3;
 //function will reset the values with every playthrough
 function resetResults(){
@@ -58,9 +67,9 @@ function resetResults(){
 
 //function that starts the first page of questions on the trvia page
 function page1Start() {
-
+//used when restarting the game using the button at the end result screen
 showDisplay();
-
+//calls function to reset scores for every playthrough
 resetResults();
 
 //timer that when reaches 0 will end will result in a "time out screen" also displaying the correct answer
@@ -119,16 +128,15 @@ document.getElementById("a3").innerHTML = page1[3];
 document.getElementById("a4").innerHTML = page1[4];
 
 // on click functions for first page
-document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay()};
+document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay(), wPicShow()};
     function oneFuncWrong(){
         console.log("wrong");
         document.getElementById("result").innerHTML = response[2];
-        document.getElementById("correctA").innerHTML ="Correct Answer was " + page1[3];
-        document.getElementById("imgID").innerHTML = '<img src="../assets/images/wrong.gif" />';
-        //this is clear the counter so it doesn't interfere with the next page of questions
-        clearInterval(counter);
+        document.getElementById("correctA").innerHTML ="Correct Answer was: " + page1[3];
 
         scoreWrong++;
+        //this is clear the counter so it doesn't interfere with the next page of questions
+        clearInterval(counter);
 
         var rcounter=setInterval(rtimer, 1000) //100 will run it every second
 
@@ -140,6 +148,9 @@ document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay(
                console.log("next page");
                document.getElementById("result").innerHTML = "";
                document.getElementById("correctA").innerHTML = "";
+
+               wPicHide();
+
                page2Start();
                 return;
             }
@@ -152,7 +163,7 @@ document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay(
     function oneFuncWrong(){
         console.log("wrong");
         document.getElementById("result").innerHTML = response[2];
-        document.getElementById("correctA").innerHTML ="Correct Answer was " + page1[3];
+        document.getElementById("correctA").innerHTML ="Correct Answer was: " + page1[3];
 
         scoreWrong++;
 
@@ -205,7 +216,7 @@ document.getElementById("a3").onclick = function() {oneFuncCorrect(), hideDispla
     function oneFuncWrong(){
         console.log("wrong");
         document.getElementById("result").innerHTML = response[2];
-        document.getElementById("correctA").innerHTML ="Correct Answer was " + page1[3];
+        document.getElementById("correctA").innerHTML ="Correct Answer was: " + page1[3];
 
         scoreWrong++;
 
@@ -297,11 +308,11 @@ document.getElementById("a4").innerHTML = page2[4];
 
 //on click functions for first page
 //change the oneFuncWrong/oneFuncCorrect 
-document.getElementById("a3").onclick = function() {oneFuncWrong(), hideDisplay()};
-    function oneFuncWrong(){
+document.getElementById("a3").onclick = function() {twoFuncWrong(), hideDisplay()};
+    function twoFuncWrong(){
         console.log("wrong");
         document.getElementById("result").innerHTML = response[2];
-        document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+        document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
 
         scoreWrong++;
 
@@ -325,11 +336,11 @@ document.getElementById("a3").onclick = function() {oneFuncWrong(), hideDisplay(
 
     };
 
-    document.getElementById("a2").onclick = function() {oneFuncWrong(), hideDisplay()};
-    function oneFuncWrong(){
+    document.getElementById("a2").onclick = function() {twoFuncWrong(), hideDisplay()};
+    function twoFuncWrong(){
         console.log("wrong");
         document.getElementById("result").innerHTML = response[2];
-        document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+        document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
 
         scoreWrong++;
 
@@ -352,8 +363,8 @@ document.getElementById("a3").onclick = function() {oneFuncWrong(), hideDisplay(
 
     };
 //correct answer, rest are wrong 
-document.getElementById("a1").onclick = function() {oneFuncCorrect(), hideDisplay()};
-    function oneFuncCorrect() {
+document.getElementById("a1").onclick = function() {twoFuncCorrect(), hideDisplay()};
+    function twoFuncCorrect() {
         console.log("correct");
         document.getElementById("result").innerHTML = response[1];
 
@@ -378,11 +389,11 @@ document.getElementById("a1").onclick = function() {oneFuncCorrect(), hideDispla
 
     };
 
-    document.getElementById("a4").onclick = function() {oneFuncWrong(), hideDisplay()};
-    function oneFuncWrong(){
+    document.getElementById("a4").onclick = function() {twoFuncWrong(), hideDisplay()};
+    function twoFuncWrong(){
         console.log("wrong");
         document.getElementById("result").innerHTML = response[2];
-        document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+        document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
 
         scoreWrong++;
 
@@ -458,22 +469,27 @@ function page3Start () {
      document.getElementById("timer").innerHTML="Time Remaining: " + count + " Seconds";
     }
     //change here
-    var page2 = ["page 3 question goes here", "wrong", "wrong", "correct", "wrong"];
+    var page3 = [
+        "What does Meatwad's squishy body look like?",
+         "A piece of cake",
+          "A piece of dung",
+           "A meatball",
+            "A piece of chewing gum"];
     
-    document.getElementById("q").innerHTML = page2[0]
+    document.getElementById("q").innerHTML = page3[0]
     
-    document.getElementById("a1").innerHTML = page2[1];
-    document.getElementById("a2").innerHTML = page2[2];
-    document.getElementById("a3").innerHTML = page2[3];
-    document.getElementById("a4").innerHTML = page2[4];
+    document.getElementById("a1").innerHTML = page3[1];
+    document.getElementById("a2").innerHTML = page3[2];
+    document.getElementById("a3").innerHTML = page3[3];
+    document.getElementById("a4").innerHTML = page3[4];
     
     //on click functions for first page
     //change the oneFuncWrong/oneFuncCorrect 
-    document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay()};
-        function oneFuncWrong(){
+    document.getElementById("a1").onclick = function() {threeFuncWrong(), hideDisplay()};
+        function threeFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page3[3];
     
             scoreWrong++;
     
@@ -498,11 +514,11 @@ function page3Start () {
     
         };
     
-        document.getElementById("a2").onclick = function() {oneFuncWrong(), hideDisplay()};
-        function oneFuncWrong(){
+        document.getElementById("a2").onclick = function() {threeFuncWrong(), hideDisplay()};
+        function threeFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page3[3];
     
             scoreWrong++;
     
@@ -525,8 +541,8 @@ function page3Start () {
     
         };
     //correct answer, rest are wrong 
-    document.getElementById("a3").onclick = function() {oneFuncCorrect(), hideDisplay()};
-        function oneFuncCorrect() {
+    document.getElementById("a3").onclick = function() {threeFuncCorrect(), hideDisplay()};
+        function threeFuncCorrect() {
             console.log("correct");
             document.getElementById("result").innerHTML = response[1];
     
@@ -551,11 +567,11 @@ function page3Start () {
     
         };
     
-        document.getElementById("a4").onclick = function() {oneFuncWrong(), hideDisplay()};
-        function oneFuncWrong(){
+        document.getElementById("a4").onclick = function() {threeFuncWrong(), hideDisplay()};
+        function threeFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page3[3];
     
             scoreWrong++;
     
@@ -632,22 +648,27 @@ function page4Start () {
      document.getElementById("timer").innerHTML="Time Remaining: " + count + " Seconds";
     }
     //change here
-    var page2 = ["page 4 question goes here", "wrong", "wrong", "correct", "wrong"];
+    var page4 = [
+        "Who is the Aqua Teens' next door neighbor?",
+         "Earl",
+          "Josh",
+           "Greg",
+            "Carl"];
     
-    document.getElementById("q").innerHTML = page2[0]
+    document.getElementById("q").innerHTML = page4[0]
     
-    document.getElementById("a1").innerHTML = page2[1];
-    document.getElementById("a2").innerHTML = page2[2];
-    document.getElementById("a3").innerHTML = page2[3];
-    document.getElementById("a4").innerHTML = page2[4];
+    document.getElementById("a1").innerHTML = page4[1];
+    document.getElementById("a2").innerHTML = page4[2];
+    document.getElementById("a3").innerHTML = page4[3];
+    document.getElementById("a4").innerHTML = page4[4];
     
     //on click functions for first page
     //change the oneFuncWrong/oneFuncCorrect 
-    document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay()};
-        function oneFuncWrong(){
+    document.getElementById("a1").onclick = function() {fourFuncWrong(), hideDisplay()};
+        function fourFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
     
             scoreWrong++;
     
@@ -671,11 +692,11 @@ function page4Start () {
     
         };
     
-        document.getElementById("a2").onclick = function() {oneFuncWrong(), hideDisplay()};
-        function oneFuncWrong(){
+        document.getElementById("a2").onclick = function() {fourFuncWrong(), hideDisplay()};
+        function fourFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
     
             scoreWrong++;
     
@@ -698,8 +719,8 @@ function page4Start () {
     
         };
     //correct answer, rest are wrong 
-    document.getElementById("a3").onclick = function() {oneFuncCorrect(), hideDisplay()};
-        function oneFuncCorrect() {
+    document.getElementById("a4").onclick = function() {fourFuncCorrect(), hideDisplay()};
+        function fourFuncCorrect() {
             console.log("correct");
             document.getElementById("result").innerHTML = response[1];
     
@@ -724,11 +745,11 @@ function page4Start () {
     
         };
     
-        document.getElementById("a4").onclick = function() {oneFuncWrong(), hideDisplay()};
-        function oneFuncWrong(){
+        document.getElementById("a3").onclick = function() {fourFuncWrong(), hideDisplay()};
+        function fourFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
     
             scoreWrong++;
     
@@ -805,22 +826,27 @@ function page5Start () {
      document.getElementById("timer").innerHTML="Time Remaining: " + count + " Seconds";
     }
     //change here
-    var page2 = ["page 5 question goes here", "wrong", "wrong", "correct", "wrong"];
+    var page5 = [
+        "What color is the milkshake inside of Master Shake?",
+         "Green",
+          "Pink",
+           "Brown",
+            "Yellow"];
     
-    document.getElementById("q").innerHTML = page2[0]
+    document.getElementById("q").innerHTML = page5[0]
     
-    document.getElementById("a1").innerHTML = page2[1];
-    document.getElementById("a2").innerHTML = page2[2];
-    document.getElementById("a3").innerHTML = page2[3];
-    document.getElementById("a4").innerHTML = page2[4];
+    document.getElementById("a1").innerHTML = page5[1];
+    document.getElementById("a2").innerHTML = page5[2];
+    document.getElementById("a3").innerHTML = page5[3];
+    document.getElementById("a4").innerHTML = page5[4];
     
     //on click functions for first page
     //change the oneFuncWrong/oneFuncCorrect 
-    document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay()};
-        function oneFuncWrong(){
+    document.getElementById("a3").onclick = function() {fiveFuncWrong(), hideDisplay()};
+        function fiveFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
     
             scoreWrong++;
     
@@ -844,11 +870,11 @@ function page5Start () {
     
         };
     
-        document.getElementById("a2").onclick = function() {oneFuncWrong(), hideDisplay()};
-        function oneFuncWrong(){
+        document.getElementById("a2").onclick = function() {fiveFuncWrong(), hideDisplay()};
+        function fiveFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
     
             scoreWrong++;
     
@@ -871,8 +897,8 @@ function page5Start () {
     
         };
     //correct answer, rest are wrong 
-    document.getElementById("a3").onclick = function() {oneFuncCorrect(), hideDisplay()};
-        function oneFuncCorrect() {
+    document.getElementById("a1").onclick = function() {fiveFuncCorrect(), hideDisplay()};
+        function fiveFuncCorrect() {
             console.log("correct");
             document.getElementById("result").innerHTML = response[1];
     
@@ -897,11 +923,11 @@ function page5Start () {
     
         };
     
-        document.getElementById("a4").onclick = function() {oneFuncWrong(), hideDisplay()};
-        function oneFuncWrong(){
+        document.getElementById("a4").onclick = function() {fiveFuncWrong(), hideDisplay()};
+        function fiveFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
     
             scoreWrong++;
     
@@ -977,22 +1003,27 @@ function page6Start () {
      document.getElementById("timer").innerHTML="Time Remaining: " + count + " Seconds";
     }
     //change here
-    var page2 = ["page 6 question goes here", "wrong", "wrong", "correct", "wrong"];
+    var page6 = [
+        "Where does Carl always have his hands?",
+         "Crossed above his chest",
+          "Over his head",
+           "By his sides",
+            "On his hips"];
     
-    document.getElementById("q").innerHTML = page2[0]
+    document.getElementById("q").innerHTML = page6[0]
     
-    document.getElementById("a1").innerHTML = page2[1];
-    document.getElementById("a2").innerHTML = page2[2];
-    document.getElementById("a3").innerHTML = page2[3];
-    document.getElementById("a4").innerHTML = page2[4];
+    document.getElementById("a1").innerHTML = page6[1];
+    document.getElementById("a2").innerHTML = page6[2];
+    document.getElementById("a3").innerHTML = page6[3];
+    document.getElementById("a4").innerHTML = page6[4];
     
     //on click functions for first page
     //change the oneFuncWrong/oneFuncCorrect 
-    document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay()};
-        function oneFuncWrong(){
+    document.getElementById("a1").onclick = function() {sixFuncWrong(), hideDisplay()};
+        function sixFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
     
             scoreWrong++;
     
@@ -1016,11 +1047,11 @@ function page6Start () {
     
         };
     
-        document.getElementById("a2").onclick = function() {oneFuncWrong(), hideDisplay()};
-        function oneFuncWrong(){
+        document.getElementById("a2").onclick = function() {sixFuncWrong(), hideDisplay()};
+        function sixFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
     
             scoreWrong++;
     
@@ -1043,8 +1074,8 @@ function page6Start () {
     
         };
     //correct answer, rest are wrong 
-    document.getElementById("a3").onclick = function() {oneFuncCorrect(), hideDisplay()};
-        function oneFuncCorrect() {
+    document.getElementById("a4").onclick = function() {sixFuncCorrect(), hideDisplay()};
+        function sixFuncCorrect() {
             console.log("correct");
             document.getElementById("result").innerHTML = response[1];
     
@@ -1069,11 +1100,11 @@ function page6Start () {
     
         };
     
-        document.getElementById("a4").onclick = function() {oneFuncWrong(), hideDisplay()};
-        function oneFuncWrong(){
+        document.getElementById("a3").onclick = function() {sixFuncWrong(), hideDisplay()};
+        function sixFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
     
             scoreWrong++;
     
@@ -1149,22 +1180,27 @@ function page7Start () {
      document.getElementById("timer").innerHTML="Time Remaining: " + count + " Seconds";
     }
     //change here
-    var page2 = ["page 7 question goes here", "wrong", "wrong", "correct", "wrong"];
+    var page7 = [
+    "When the theme song comes on, what's the first few words said",
+     "My name is...Shake Zula.",
+      "My show is...Aqua Teen.",
+       "My body is...a milkshake.",
+        "My show is...so funny."];
     
-    document.getElementById("q").innerHTML = page2[0]
+    document.getElementById("q").innerHTML = page7[0]
     
-    document.getElementById("a1").innerHTML = page2[1];
-    document.getElementById("a2").innerHTML = page2[2];
-    document.getElementById("a3").innerHTML = page2[3];
-    document.getElementById("a4").innerHTML = page2[4];
+    document.getElementById("a1").innerHTML = page7[1];
+    document.getElementById("a2").innerHTML = page7[2];
+    document.getElementById("a3").innerHTML = page7[3];
+    document.getElementById("a4").innerHTML = page7[4];
     
     //on click functions for first page
     //change the oneFuncWrong/oneFuncCorrect 
-    document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay()};
-        function oneFuncWrong(){
+    document.getElementById("a3").onclick = function() {sevenFuncWrong(), hideDisplay()};
+        function sevenFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
     
             scoreWrong++;
     
@@ -1188,11 +1224,11 @@ function page7Start () {
     
         };
     
-        document.getElementById("a2").onclick = function() {oneFuncWrong(), hideDisplay()};
-        function oneFuncWrong(){
+        document.getElementById("a2").onclick = function() {sevenFuncWrong(), hideDisplay()};
+        function sevenFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
     
             scoreWrong++;
     
@@ -1215,8 +1251,8 @@ function page7Start () {
     
         };
     //correct answer, rest are wrong 
-    document.getElementById("a3").onclick = function() {oneFuncCorrect(), hideDisplay()};
-        function oneFuncCorrect() {
+    document.getElementById("a1").onclick = function() {sevenFuncCorrect(), hideDisplay()};
+        function sevenFuncCorrect() {
             console.log("correct");
             document.getElementById("result").innerHTML = response[1];
     
@@ -1241,11 +1277,11 @@ function page7Start () {
     
         };
     
-        document.getElementById("a4").onclick = function() {oneFuncWrong(), hideDisplay()};
-        function oneFuncWrong(){
+        document.getElementById("a4").onclick = function() {sevenFuncWrong(), hideDisplay()};
+        function sevenFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
     
             scoreWrong++;
     
@@ -1271,18 +1307,6 @@ function page7Start () {
     
     
     };
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
 
 function pageRStart () {
     showResults();
