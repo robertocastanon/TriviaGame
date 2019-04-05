@@ -129,7 +129,7 @@ document.getElementById("a3").innerHTML = page1[3];
 document.getElementById("a4").innerHTML = page1[4];
 
 // on click functions for first page
-document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay(), wPicShow()};
+document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay()};
     function oneFuncWrong(){
         console.log("wrong");
         document.getElementById("result").innerHTML = response[2];
@@ -149,9 +149,6 @@ document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay(
                console.log("next page");
                document.getElementById("result").innerHTML = "";
                document.getElementById("correctA").innerHTML = "";
-
-               wPicHide();
-
                page2Start();
                 return;
             }
