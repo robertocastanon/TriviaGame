@@ -36,11 +36,12 @@ function showResults() {
     divResults.style.display = '';
 }
 
-
+//function that reveals the hidden picture
 function wPicShow() {
     document.getElementById('wrongPic').style.visibility='visible';
     console.log("show pic");
 }
+//function that should re-hide the picture (NOT WORKING)
 function wPicHide() {
     document.getElementById('wrongPic').style.visibility='hidden';
     console.log("hide pic");
@@ -55,9 +56,9 @@ var noAnswer = 0;
 var response = ["OUT OF TIME!", "CORRECT!!", "WRONG.."];
 
 //the initial countdown for the first page of questions
-var count = 10;
+var count = 20;
 //the initial countdown for when you get the result after choosing an answer or running out of time
-var rcount = 3;
+var rcount = 5;
 //function will reset the values with every playthrough
 function resetResults(){
     scoreCorrect = 0;
@@ -81,14 +82,14 @@ function timer() {
      clearInterval(counter);
      //when timer reaches 0 the display id will hide and a 'time out' result will show
      console.log("out of time!");
-
+    //if no answer is chosen then the score for the unanswered will go up
      noAnswer++;
-
+    //hide timer, question and answers
      hideDisplay();
      document.getElementById("result").innerHTML = response[0];
 
      var rcounter=setInterval(rtimer, 1000) //100 will run it every second
-
+    //function that only occurs when no answer is chosen
      function rtimer() {
          rcount=rcount-1;
          if (rcount <= 0) {
@@ -112,7 +113,7 @@ function timer() {
  document.getElementById("timer").innerHTML="Time Remaining: " + count + " Seconds";
 }
 
-
+//var for the question first, then multiple choices
 var page1 = [
     "What kind of food does Master Shake look like?",
      "A fast food coffee",
@@ -668,7 +669,7 @@ function page4Start () {
         function fourFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page4[3];
     
             scoreWrong++;
     
@@ -696,7 +697,7 @@ function page4Start () {
         function fourFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page4[3];
     
             scoreWrong++;
     
@@ -749,7 +750,7 @@ function page4Start () {
         function fourFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page4[3];
     
             scoreWrong++;
     
@@ -846,7 +847,7 @@ function page5Start () {
         function fiveFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page5[3];
     
             scoreWrong++;
     
@@ -874,7 +875,7 @@ function page5Start () {
         function fiveFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page5[3];
     
             scoreWrong++;
     
@@ -927,7 +928,7 @@ function page5Start () {
         function fiveFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page5[3];
     
             scoreWrong++;
     
@@ -1023,7 +1024,7 @@ function page6Start () {
         function sixFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page6[3];
     
             scoreWrong++;
     
@@ -1051,7 +1052,7 @@ function page6Start () {
         function sixFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page6[3];
     
             scoreWrong++;
     
@@ -1104,7 +1105,7 @@ function page6Start () {
         function sixFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page6[3];
     
             scoreWrong++;
     
@@ -1200,7 +1201,7 @@ function page7Start () {
         function sevenFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page7[3];
     
             scoreWrong++;
     
@@ -1228,7 +1229,7 @@ function page7Start () {
         function sevenFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page7[3];
     
             scoreWrong++;
     
@@ -1281,7 +1282,7 @@ function page7Start () {
         function sevenFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page7[3];
     
             scoreWrong++;
     
@@ -1307,13 +1308,13 @@ function page7Start () {
     
     
     };
-
+//this function will pop up at the end of the game and display your score that it was adding up
 function pageRStart () {
     showResults();
     document.getElementById("ca").innerHTML = "Correct Answer: " + scoreCorrect;
     document.getElementById("ia").innerHTML = "Incorrect Answer: " + scoreWrong;
     document.getElementById("ua").innerHTML = "Unanswered: " + noAnswer;
-
+    //will re-display the button from the main menu and restart the game if pressed
     showButton();
     // document.getElementById("startGame").onclick = function() {page1Start(), hideButton()}
     document.getElementById("startGame").innerHTML = "PLAY AGAIN?";
