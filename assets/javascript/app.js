@@ -36,14 +36,22 @@ function showResults() {
     divResults.style.display = '';
 }
 
-//function that reveals the hidden picture
+//function that reveals the hidden picture for choosing a wrong answers
 function wPicShow() {
     document.getElementById('wrongPic').style.visibility='visible';
-    console.log("show pic");
+    console.log("show pic for wrong choice");
 }
-//function that should re-hide the picture (NOT WORKING)
-function wPicHide() {
+
+//function that reveals the hidden pic when the user chooses the correct answer
+function cPicShow() {
+    document.getElementById('correctPic').style.visibility='visible';
+    console.log("show pic for correct choice")
+}
+
+//function that hides the image (gif)
+function picHide() {
     document.getElementById('wrongPic').style.visibility='hidden';
+    document.getElementById('correctPic').style.visibility='hidden';
     console.log("hide pic");
 }
 
@@ -131,7 +139,7 @@ document.getElementById("a3").innerHTML = page1[3];
 document.getElementById("a4").innerHTML = page1[4];
 
 // on click functions for first page
-document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay()};
+document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay(), wPicShow()};
     function oneFuncWrong(){
         console.log("wrong");
         document.getElementById("result").innerHTML = response[2];
@@ -159,7 +167,7 @@ document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay(
 
     };
 
-    document.getElementById("a2").onclick = function() {oneFuncWrong(), hideDisplay()};
+    document.getElementById("a2").onclick = function() {oneFuncWrong(), hideDisplay(), wPicShow()};
     function oneFuncWrong(){
         console.log("wrong");
         document.getElementById("result").innerHTML = response[2];
@@ -186,7 +194,7 @@ document.getElementById("a1").onclick = function() {oneFuncWrong(), hideDisplay(
 
     };
 //correct answer, rest are wrong for page1
-document.getElementById("a3").onclick = function() {oneFuncCorrect(), hideDisplay()};
+document.getElementById("a3").onclick = function() {oneFuncCorrect(), hideDisplay(), cPicShow()};
     function oneFuncCorrect() {
         console.log("correct");
         document.getElementById("result").innerHTML = response[1];
@@ -212,7 +220,7 @@ document.getElementById("a3").onclick = function() {oneFuncCorrect(), hideDispla
 
     };
 
-    document.getElementById("a4").onclick = function() {oneFuncWrong(), hideDisplay()};
+    document.getElementById("a4").onclick = function() {oneFuncWrong(), hideDisplay(), wPicShow()};
     function oneFuncWrong(){
         console.log("wrong");
         document.getElementById("result").innerHTML = response[2];
@@ -244,6 +252,8 @@ document.getElementById("a3").onclick = function() {oneFuncCorrect(), hideDispla
 
 //start of page 2 (change here)
 function page2Start () {
+//hides any gif that was displayed in the start of a new question
+picHide();
 //Will bring back the html starting display at the start of the next question
 showDisplay();
 //rest both the counts
@@ -1307,6 +1317,7 @@ function page7Start () {
     
     
     };
+
 //this function will pop up at the end of the game and display your score that it was adding up
 function pageRStart () {
     showResults();
