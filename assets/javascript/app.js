@@ -310,7 +310,7 @@ document.getElementById("a3").onclick = function() {twoFuncWrong(), hideDisplay(
     function twoFuncWrong(){
         console.log("wrong");
         document.getElementById("result").innerHTML = response[2];
-        document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
+        document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[1];
 
         scoreWrong++;
 
@@ -338,7 +338,7 @@ document.getElementById("a3").onclick = function() {twoFuncWrong(), hideDisplay(
     function twoFuncWrong(){
         console.log("wrong");
         document.getElementById("result").innerHTML = response[2];
-        document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
+        document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[1];
 
         scoreWrong++;
 
@@ -391,7 +391,7 @@ document.getElementById("a1").onclick = function() {twoFuncCorrect(), hideDispla
     function twoFuncWrong(){
         console.log("wrong");
         document.getElementById("result").innerHTML = response[2];
-        document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[3];
+        document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[1];
 
         scoreWrong++;
 
@@ -666,7 +666,7 @@ function page4Start () {
         function fourFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page4[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page4[4];
     
             scoreWrong++;
     
@@ -694,7 +694,7 @@ function page4Start () {
         function fourFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page4[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page4[4];
     
             scoreWrong++;
     
@@ -747,7 +747,7 @@ function page4Start () {
         function fourFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page4[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page4[4];
     
             scoreWrong++;
     
@@ -844,7 +844,7 @@ function page5Start () {
         function fiveFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page5[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page5[1];
     
             scoreWrong++;
     
@@ -872,7 +872,7 @@ function page5Start () {
         function fiveFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page5[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page5[1];
     
             scoreWrong++;
     
@@ -925,7 +925,7 @@ function page5Start () {
         function fiveFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page5[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page5[1];
     
             scoreWrong++;
     
@@ -1021,7 +1021,7 @@ function page6Start () {
         function sixFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page6[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page6[4];
     
             scoreWrong++;
     
@@ -1049,7 +1049,7 @@ function page6Start () {
         function sixFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page6[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page6[4];
     
             scoreWrong++;
     
@@ -1102,7 +1102,7 @@ function page6Start () {
         function sixFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page6[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page6[4];
     
             scoreWrong++;
     
@@ -1198,7 +1198,7 @@ function page7Start () {
         function sevenFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page7[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page7[1];
     
             scoreWrong++;
     
@@ -1226,7 +1226,7 @@ function page7Start () {
         function sevenFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page7[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page7[1];
     
             scoreWrong++;
     
@@ -1279,7 +1279,7 @@ function page7Start () {
         function sevenFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
-            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page7[3];
+            document.getElementById("correctA").innerHTML ="Correct Answer was: " + page7[1];
     
             scoreWrong++;
     
