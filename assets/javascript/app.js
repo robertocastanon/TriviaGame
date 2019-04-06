@@ -318,7 +318,7 @@ document.getElementById("a4").innerHTML = page2[4];
 
 //on click functions for first page
 //change the oneFuncWrong/oneFuncCorrect 
-document.getElementById("a3").onclick = function() {twoFuncWrong(), hideDisplay()};
+document.getElementById("a3").onclick = function() {twoFuncWrong(), hideDisplay(), wPicShow()};
     function twoFuncWrong(){
         console.log("wrong");
         document.getElementById("result").innerHTML = response[2];
@@ -346,7 +346,7 @@ document.getElementById("a3").onclick = function() {twoFuncWrong(), hideDisplay(
 
     };
 
-    document.getElementById("a2").onclick = function() {twoFuncWrong(), hideDisplay()};
+    document.getElementById("a2").onclick = function() {twoFuncWrong(), hideDisplay(), wPicShow()};
     function twoFuncWrong(){
         console.log("wrong");
         document.getElementById("result").innerHTML = response[2];
@@ -373,7 +373,7 @@ document.getElementById("a3").onclick = function() {twoFuncWrong(), hideDisplay(
 
     };
 //correct answer, rest are wrong 
-document.getElementById("a1").onclick = function() {twoFuncCorrect(), hideDisplay()};
+document.getElementById("a1").onclick = function() {twoFuncCorrect(), hideDisplay(), cPicShow()};
     function twoFuncCorrect() {
         console.log("correct");
         document.getElementById("result").innerHTML = response[1];
@@ -399,7 +399,7 @@ document.getElementById("a1").onclick = function() {twoFuncCorrect(), hideDispla
 
     };
 
-    document.getElementById("a4").onclick = function() {twoFuncWrong(), hideDisplay()};
+    document.getElementById("a4").onclick = function() {twoFuncWrong(), hideDisplay(), wPicShow()};
     function twoFuncWrong(){
         console.log("wrong");
         document.getElementById("result").innerHTML = response[2];
@@ -432,6 +432,7 @@ document.getElementById("a1").onclick = function() {twoFuncCorrect(), hideDispla
 
 //start of page 3 (change here)
 function page3Start () {
+    picHide();
     //Will bring back the html starting display at the start of the next question
     showDisplay();
     //rest both the counts
@@ -493,9 +494,9 @@ function page3Start () {
     document.getElementById("a3").innerHTML = page3[3];
     document.getElementById("a4").innerHTML = page3[4];
     
-    //on click functions for first page
+    //on click functions for third page
     //change the oneFuncWrong/oneFuncCorrect 
-    document.getElementById("a1").onclick = function() {threeFuncWrong(), hideDisplay()};
+    document.getElementById("a1").onclick = function() {threeFuncWrong(), hideDisplay(), wPicShow()};
         function threeFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
@@ -524,7 +525,7 @@ function page3Start () {
     
         };
     
-        document.getElementById("a2").onclick = function() {threeFuncWrong(), hideDisplay()};
+        document.getElementById("a2").onclick = function() {threeFuncWrong(), hideDisplay(), wPicShow()};
         function threeFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
@@ -551,7 +552,7 @@ function page3Start () {
     
         };
     //correct answer, rest are wrong 
-    document.getElementById("a3").onclick = function() {threeFuncCorrect(), hideDisplay()};
+    document.getElementById("a3").onclick = function() {threeFuncCorrect(), hideDisplay(), cPicShow()};
         function threeFuncCorrect() {
             console.log("correct");
             document.getElementById("result").innerHTML = response[1];
@@ -577,7 +578,7 @@ function page3Start () {
     
         };
     
-        document.getElementById("a4").onclick = function() {threeFuncWrong(), hideDisplay()};
+        document.getElementById("a4").onclick = function() {threeFuncWrong(), hideDisplay(), wPicShow()};
         function threeFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
@@ -611,6 +612,7 @@ function page3Start () {
 
 //start of page 4 (change here)
 function page4Start () {
+    picHide();
     //Will bring back the html starting display at the start of the next question
     showDisplay();
     //rest both the counts
@@ -672,9 +674,9 @@ function page4Start () {
     document.getElementById("a3").innerHTML = page4[3];
     document.getElementById("a4").innerHTML = page4[4];
     
-    //on click functions for first page
+    //on click functions for fourth page
     //change the oneFuncWrong/oneFuncCorrect 
-    document.getElementById("a1").onclick = function() {fourFuncWrong(), hideDisplay()};
+    document.getElementById("a1").onclick = function() {fourFuncWrong(), hideDisplay(), wPicShow()};
         function fourFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
@@ -702,7 +704,7 @@ function page4Start () {
     
         };
     
-        document.getElementById("a2").onclick = function() {fourFuncWrong(), hideDisplay()};
+        document.getElementById("a2").onclick = function() {fourFuncWrong(), hideDisplay(), wPicShow()};
         function fourFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
@@ -729,7 +731,7 @@ function page4Start () {
     
         };
     //correct answer, rest are wrong 
-    document.getElementById("a4").onclick = function() {fourFuncCorrect(), hideDisplay()};
+    document.getElementById("a4").onclick = function() {fourFuncCorrect(), hideDisplay(), cPicShow()};
         function fourFuncCorrect() {
             console.log("correct");
             document.getElementById("result").innerHTML = response[1];
@@ -755,7 +757,7 @@ function page4Start () {
     
         };
     
-        document.getElementById("a3").onclick = function() {fourFuncWrong(), hideDisplay()};
+        document.getElementById("a3").onclick = function() {fourFuncWrong(), hideDisplay(), wPicShow()};
         function fourFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
@@ -789,6 +791,7 @@ function page4Start () {
 
 //start of page 5 (change here)
 function page5Start () {
+    picHide();
     //Will bring back the html starting display at the start of the next question
     showDisplay();
     //rest both the counts
@@ -850,9 +853,9 @@ function page5Start () {
     document.getElementById("a3").innerHTML = page5[3];
     document.getElementById("a4").innerHTML = page5[4];
     
-    //on click functions for first page
+    //on click functions for fifth page
     //change the oneFuncWrong/oneFuncCorrect 
-    document.getElementById("a3").onclick = function() {fiveFuncWrong(), hideDisplay()};
+    document.getElementById("a3").onclick = function() {fiveFuncWrong(), hideDisplay(), wPicShow()};
         function fiveFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
@@ -880,7 +883,7 @@ function page5Start () {
     
         };
     
-        document.getElementById("a2").onclick = function() {fiveFuncWrong(), hideDisplay()};
+        document.getElementById("a2").onclick = function() {fiveFuncWrong(), hideDisplay(), wPicShow()};
         function fiveFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
@@ -907,7 +910,7 @@ function page5Start () {
     
         };
     //correct answer, rest are wrong 
-    document.getElementById("a1").onclick = function() {fiveFuncCorrect(), hideDisplay()};
+    document.getElementById("a1").onclick = function() {fiveFuncCorrect(), hideDisplay(), cPicShow()};
         function fiveFuncCorrect() {
             console.log("correct");
             document.getElementById("result").innerHTML = response[1];
@@ -933,7 +936,7 @@ function page5Start () {
     
         };
     
-        document.getElementById("a4").onclick = function() {fiveFuncWrong(), hideDisplay()};
+        document.getElementById("a4").onclick = function() {fiveFuncWrong(), hideDisplay(), wPicShow()};
         function fiveFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
@@ -966,6 +969,7 @@ function page5Start () {
 
 //start of page 6 (change here)
 function page6Start () {
+    picHide();
     //Will bring back the html starting display at the start of the next question
     showDisplay();
     //rest both the counts
@@ -1027,9 +1031,9 @@ function page6Start () {
     document.getElementById("a3").innerHTML = page6[3];
     document.getElementById("a4").innerHTML = page6[4];
     
-    //on click functions for first page
+    //on click functions for sixth page
     //change the oneFuncWrong/oneFuncCorrect 
-    document.getElementById("a1").onclick = function() {sixFuncWrong(), hideDisplay()};
+    document.getElementById("a1").onclick = function() {sixFuncWrong(), hideDisplay(), wPicShow()};
         function sixFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
@@ -1057,7 +1061,7 @@ function page6Start () {
     
         };
     
-        document.getElementById("a2").onclick = function() {sixFuncWrong(), hideDisplay()};
+        document.getElementById("a2").onclick = function() {sixFuncWrong(), hideDisplay(),wPicShow()};
         function sixFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
@@ -1084,7 +1088,7 @@ function page6Start () {
     
         };
     //correct answer, rest are wrong 
-    document.getElementById("a4").onclick = function() {sixFuncCorrect(), hideDisplay()};
+    document.getElementById("a4").onclick = function() {sixFuncCorrect(), hideDisplay(), cPicShow()};
         function sixFuncCorrect() {
             console.log("correct");
             document.getElementById("result").innerHTML = response[1];
@@ -1110,7 +1114,7 @@ function page6Start () {
     
         };
     
-        document.getElementById("a3").onclick = function() {sixFuncWrong(), hideDisplay()};
+        document.getElementById("a3").onclick = function() {sixFuncWrong(), hideDisplay(), wPicShow()};
         function sixFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
@@ -1143,6 +1147,7 @@ function page6Start () {
 
 //start of page 2 (change here)
 function page7Start () {
+    picHide();
     //Will bring back the html starting display at the start of the next question
     showDisplay();
     //rest both the counts
@@ -1204,9 +1209,9 @@ function page7Start () {
     document.getElementById("a3").innerHTML = page7[3];
     document.getElementById("a4").innerHTML = page7[4];
     
-    //on click functions for first page
+    //on click functions for seventh page
     //change the oneFuncWrong/oneFuncCorrect 
-    document.getElementById("a3").onclick = function() {sevenFuncWrong(), hideDisplay()};
+    document.getElementById("a3").onclick = function() {sevenFuncWrong(), hideDisplay(), wPicShow()};
         function sevenFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
@@ -1234,7 +1239,7 @@ function page7Start () {
     
         };
     
-        document.getElementById("a2").onclick = function() {sevenFuncWrong(), hideDisplay()};
+        document.getElementById("a2").onclick = function() {sevenFuncWrong(), hideDisplay(), wPicShow()};
         function sevenFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
@@ -1261,7 +1266,7 @@ function page7Start () {
     
         };
     //correct answer, rest are wrong 
-    document.getElementById("a1").onclick = function() {sevenFuncCorrect(), hideDisplay()};
+    document.getElementById("a1").onclick = function() {sevenFuncCorrect(), hideDisplay(), cPicShow()};
         function sevenFuncCorrect() {
             console.log("correct");
             document.getElementById("result").innerHTML = response[1];
@@ -1287,7 +1292,7 @@ function page7Start () {
     
         };
     
-        document.getElementById("a4").onclick = function() {sevenFuncWrong(), hideDisplay()};
+        document.getElementById("a4").onclick = function() {sevenFuncWrong(), hideDisplay(), wPicShow()};
         function sevenFuncWrong(){
             console.log("wrong");
             document.getElementById("result").innerHTML = response[2];
@@ -1320,6 +1325,7 @@ function page7Start () {
 
 //this function will pop up at the end of the game and display your score that it was adding up
 function pageRStart () {
+    picHide();
     showResults();
     document.getElementById("ca").innerHTML = "Correct Answer: " + scoreCorrect;
     document.getElementById("ia").innerHTML = "Incorrect Answer: " + scoreWrong;
