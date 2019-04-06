@@ -90,6 +90,8 @@ function timer() {
   count=count-1;
   if (count <= 0) {
      clearInterval(counter);
+     //display the correct answer if you run out of time
+     document.getElementById("correctA").innerHTML ="Correct Answer was: " + page1[3];
      //when timer reaches 0 the display id will hide and a 'time out' result will show
      console.log("out of time!");
     //if no answer is chosen then the score for the unanswered will go up
@@ -267,6 +269,8 @@ function timer() {
   count=count-1;
   if (count <= 0) {
      clearInterval(counter);
+    //display the correct answer if you run out of time
+    document.getElementById("correctA").innerHTML ="Correct Answer was: " + page2[1];
      //when timer reaches 0 the display id will hide and a 'time out' result will show
      console.log("out of time!");
 
@@ -446,6 +450,8 @@ function page3Start () {
       count=count-1;
       if (count <= 0) {
          clearInterval(counter);
+         //display the correct answer if you run out of time
+        document.getElementById("correctA").innerHTML ="Correct Answer was: " + page3[3];
          //when timer reaches 0 the display id will hide and a 'time out' result will show
          console.log("out of time!");
     
@@ -626,6 +632,8 @@ function page4Start () {
       count=count-1;
       if (count <= 0) {
          clearInterval(counter);
+         //display the correct answer if you run out of time
+        document.getElementById("correctA").innerHTML ="Correct Answer was: " + page4[4];
          //when timer reaches 0 the display id will hide and a 'time out' result will show
          console.log("out of time!");
     
@@ -805,6 +813,8 @@ function page5Start () {
       count=count-1;
       if (count <= 0) {
          clearInterval(counter);
+         //display the correct answer if you run out of time
+        document.getElementById("correctA").innerHTML ="Correct Answer was: " + page5[1];
          //when timer reaches 0 the display id will hide and a 'time out' result will show
          console.log("out of time!");
     
@@ -983,6 +993,8 @@ function page6Start () {
       count=count-1;
       if (count <= 0) {
          clearInterval(counter);
+         //display the correct answer if you run out of time
+        document.getElementById("correctA").innerHTML ="Correct Answer was: " + page6[4];
          //when timer reaches 0 the display id will hide and a 'time out' result will show
          console.log("out of time!");
     
@@ -1161,6 +1173,8 @@ function page7Start () {
       count=count-1;
       if (count <= 0) {
          clearInterval(counter);
+         //display the correct answer if you run out of time
+        document.getElementById("correctA").innerHTML ="Correct Answer was: " + page7[1];
          //when timer reaches 0 the display id will hide and a 'time out' result will show
          console.log("out of time!");
     
