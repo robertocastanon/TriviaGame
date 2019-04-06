@@ -66,6 +66,8 @@ function resetResults(){
     noAnswer = 0;
 }
 
+hideDisplay();
+
 //function that starts the first page of questions on the trvia page
 function page1Start() {
 //used when restarting the game using the button at the end result screen
