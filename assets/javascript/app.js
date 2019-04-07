@@ -1340,6 +1340,7 @@ function page7Start () {
 //this function will pop up at the end of the game and display your score that it was adding up
 function pageRStart () {
     picHide();
+    //shows the results that have been adding up since the start
     showResults();
     document.getElementById("ca").innerHTML = "Correct Answer: " + scoreCorrect;
     document.getElementById("ia").innerHTML = "Incorrect Answer: " + scoreWrong;
