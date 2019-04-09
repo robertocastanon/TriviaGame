@@ -1,1 +1,8 @@
 # TriviaGame
+I created a 7 question Trivia game, inspired by the American cartoon "Aqua Teen Hunger Force".
+
+At the start of the website, you'll see a button saying "Start Game!". When pressed a 20 second timer will start counting down in blue, below that will be a question in a red color, and finally below that will be four clickable possible answers. If you click on the correct answer, the timer will end and disappear. An invisible 5 second timer will start, the question and answers will also disappear, finally text saying "CORRECT!" will appear, a gif will appear and after the 5 second timer is done, the next will page will appear. Simliar to when you choose correct answer, the question, and answers will disappear. A 5 second timer will start, text will appear that you're wrong and will display what the correct answer was, finally a differentgif will appear and after the invisible timer the next page will appear.
+
+If you fail to click on any of the answers before the timer reaches 0, the timer, question and answers will disappear and text will appear saying "OUT OF TIME!" and finally will display what the correct answer was.
+
+Finally when you answer the final page, a screen will appear showing how many correct answers, incorrect answers, and unanswered questions you have gathered throughout the trivia game. Finally a button will appear saying "PLAY AGAIN?" and once clicked the game will reset without refreshing the game. This will also reset your score back to 0.
